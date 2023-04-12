@@ -6,7 +6,7 @@ import (
 )
 
 func IPv4() string {
-	ip := make([]byte, net.IPv4len)
+	ip := make(net.IP, net.IPv4len)
 	_, _ = rand.Read(ip)
-	return net.IP(ip).String()
+	return ip.String()
 }
